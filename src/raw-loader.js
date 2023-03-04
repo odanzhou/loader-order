@@ -1,6 +1,7 @@
 const loaderUtils = require('loader-utils')
 
 module.exports = function(source) {
+  // 同步loader
   const { name } = loaderUtils.getOptions(this)
   console.log('name', name)
   // 处理安全性问题
