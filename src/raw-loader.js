@@ -1,4 +1,8 @@
+const loaderUtils = require('loader-utils')
+
 module.exports = function(source) {
+  const { name } = loaderUtils.getOptions(this)
+  console.log('name', name)
   // 处理安全性问题
   const json = JSON.stringify(source)
     .replace(/\u2028/g, '\\u2028')
