@@ -11,7 +11,8 @@ module.exports = {
       {
         test: /\.js$/,
         use: [
-          
+          path.resolve('./loaders/a-loader'),
+          path.resolve('./loaders/b-loader'),
         ]
       }
     ]
