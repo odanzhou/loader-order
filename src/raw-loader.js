@@ -1,4 +1,6 @@
 const loaderUtils = require('loader-utils')
+const fs = require('fs')
+const path = require('path')
 
 module.exports = function(source) {
   // 同步loader
@@ -12,5 +14,9 @@ module.exports = function(source) {
   const resource = `export default ${json}`
   // throw new Error('Error')
   // return resource
-  this.callback(null, resource)
+  // this.callback(null, resource)
+  const callback = this.async()
+  fs.readFile(path.join(__dirname, './async.txt'), 'utf-8', (err, data) => {
+    callback(err, data)
+  })
 }
