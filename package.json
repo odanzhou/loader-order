@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "loader": "node run-loader.js"
+    "loader": "node run-loader.js",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,9 @@
   "dependencies": {
     "loader-runner": "^3.0.0",
     "loader-utils": "^1.2.3"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   }
 }
