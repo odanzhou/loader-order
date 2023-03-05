@@ -14,4 +14,5 @@ Spritesmith.run({ src: sprites}, (err, result) => {
   console.log(result.image)
   console.log(result.coordinates)
   console.log(result.properties)
+  fs.writeFileSync(path.join(__dirname, '../dist/sprites.jpg'), result.image)
 })
