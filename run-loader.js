@@ -20,3 +20,13 @@ runLoaders({
 }, (err, result) => {
   err ? console.error(err) : console.log(result)
 })
+// 雪碧图
+runLoaders({
+  resource: './src/index.css',
+  loaders: [
+    path.resolve(__dirname, './src/sprites-loader'),
+  ],
+  readResource: fs.readFile.bind(fs),
+}, (err, result) => {
+  err ? console.error(err) : null
+})
