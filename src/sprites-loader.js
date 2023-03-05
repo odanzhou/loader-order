@@ -38,18 +38,20 @@ module.exports = function(source) {
     matchedImgs.push(path.join(__dirname, img))
   }
   console.log('matchedImgs', imgs, matchedImgs)
-  return 
+
   Spritesmith.run({ src: matchedImgs}, (err, result) => {
     if(err) {
       console.error(err)
       callback(err, source)
     }
-    // 写入文件
-    fs.writeFileSync(path.join(__dirname, '../dist/sprite.jpg'), result.image)
+    // 写入文件，输出资源
+    fs.writeFileSync(path.join(process.cwd(), './dist/sprite.jpg'), result.image)
     // 替换文件
     source = source.replace(imgRegG, (match) => {
-      return `url("dist/sprite.jpg")`
+      return `url("dist/sprite.jpg"`
     })
+    // 生成 css 文件
+    fs.writeFileSync(path.join(process.cwd(), './dist/index.css'), source)
     callback(err, source)
   })
 }
