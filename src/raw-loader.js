@@ -15,6 +15,8 @@ module.exports = function(source) {
   // throw new Error('Error')
   // return resource
   // this.callback(null, resource)
+  // 不使用缓存：默认开启，loader的结果在相同的输入下有确定的输出，有依赖的 loader 无法使用缓存
+  this.cacheable(false)
   const callback = this.async()
   fs.readFile(path.join(__dirname, './async.txt'), 'utf-8', (err, data) => {
     callback(err, data)
