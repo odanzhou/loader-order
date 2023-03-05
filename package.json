@@ -6,14 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "loader": "node run-loader.js",
-    "build": "webpack"
+    "build": "webpack",
+    "sprites": "node ./src/sprites-loader.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "loader-runner": "^3.0.0",
-    "loader-utils": "^1.2.3"
+    "loader-utils": "^1.2.3",
+    "spritesmith": "^3.4.1"
   },
   "devDependencies": {
     "webpack": "^4.39.1",
