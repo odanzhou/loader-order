@@ -5,6 +5,7 @@ const path = require('path')
 runLoaders({
   resource: path.join(__dirname, './src/demo.txt'),
   loaders: [
+    path.join(__dirname, './src/emit-loader.js'),
     {
       loader: path.join(__dirname, './src/raw-loader.js'),
       options: {
